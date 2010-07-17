@@ -1,0 +1,20 @@
+<table>
+<% for expense in expenses -%>
+  <tr id="<%= dom_id(expense) %>">
+    <td>
+      <%= link_to expense.vendor.name, expense.vendor %>
+    </td>
+    <td align="right">
+      <%= number_to_currency(expense.amount) %>
+    </td>
+  </tr>
+<% end -%>
+  <tr>
+    <td align="right" colspan="2">        
+      <strong>Total</strong>: 
+<span id="total" style="<%= expense_total_style(event) %>">
+  <%= number_to_currency(event.total_expenses) %>
+</span>
+    </td>
+  </tr>
+</table>

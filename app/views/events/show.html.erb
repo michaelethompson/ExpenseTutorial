@@ -1,0 +1,21 @@
+<p>
+  <b>Name:</b>
+  <%=h @event.name %>
+</p>
+
+<p>
+  <b>Budget:</b>
+  <%=h @event.budget %>
+</p>
+
+
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', events_path %>
+
+<h3>Itemized Expenses</h3>
+
+<div id="expenses">
+  <%= render :partial => 'expenses',
+             :locals  => {:expenses => @event.expenses, 
+                          :event    => @event} %>
+</div>
